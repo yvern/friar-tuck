@@ -36,7 +36,8 @@
 
   [{db :db coll :coll data :data json :json edn :edn}]
 
-  (let [json (and json (->> json (.parse js/JSON) js->clj))
+  (let [json (and json #?(:clj (parse-string json)
+                          :cljs (->> json (.parse js/JSON) js->clj)))
         edn (and edn (read-string edn))
         obj (or data edn json)]
 
