@@ -1,6 +1,6 @@
 <p><a href="https://commons.wikimedia.org/wiki/File:The_friar_took_Robin_on_his_back_by_Louis_Rhead_1912.png#/media/File:The_friar_took_Robin_on_his_back_by_Louis_Rhead_1912.png"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/The_friar_took_Robin_on_his_back_by_Louis_Rhead_1912.png" alt="The friar took Robin on his back by Louis Rhead 1912.png"></a><br>By <a href="https://en.wikipedia.org/wiki/en:Louis_Rhead" class="extiw" title="w:en:Louis Rhead">Louis Rhead</a> - Rhead, Louis. "Bold Robin Hood and His Outlaw Band: Their Famous Exploits in Sherwood Forest". New York: Blue Ribbon Books, 1912., Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=1139258">Link</a></p>
 
-# tuck WIP
+# Friar Tuck: WIP
 
 Just as Sam did all the heavy lifting in the background for Frodo without taking enough credit, Friar Tuck helped Robin Hood.
 
@@ -10,7 +10,7 @@ Right now, tuck can help you manage your goodies cellar.
 
 Enough about flavor...
 
-tuck is a Clojure(Script) library to help you solve the same problems I had myself.
+friar-tuck is a Clojure(Script) library to help you solve the same problems I had myself.
 
 As of now, only cellar.cljc works. It gives you a unified api to use [TaffyDB](http://taffydb.com/) while on the browser/cljs/js (you still need to add taffydb.min.js yourself), or [MongoDB](https://www.mongodb.com/) while on the server/clj/jvm (via [congomongo](https://github.com/aboekhoff/congomongo)).
 
