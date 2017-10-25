@@ -1,4 +1,4 @@
-(ns tuck.db)
+(ns tuck.cellar)
 
 #?(:clj (require '[somnium.congomongo :as mongo]
                  '[cheshire.core :refer :all]))
@@ -41,7 +41,7 @@
         edn (and edn (read-string edn))
         obj (or data edn json)]
 
-    #?(:clj (m/insert! (or (first (deref db)) (first (deref DB)))
+    #?(:clj (mongo/insert! (or (first (deref db)) (first (deref DB)))
                        (keyword (or coll (second (deref db)) (second (deref DB))))
                          obj)
 
