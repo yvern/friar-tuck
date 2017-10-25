@@ -20,7 +20,8 @@
   #?(:clj (do (reset! (or db DB) [(mongo/make-connection dbname
                                             :host (or host "127.0.0.1")
                                             :port (or port 27017))
-                          (keyword coll)]))
+                           coll])
+            (mongo/set-connection! (first (or (deref db) (deref DB)))))
 
      :cljs (do (reset! (or db DB) (js/eval "TAFFY([])"))
                (. (or db DB) (store dbname)))))
@@ -41,9 +42,10 @@
         edn (and edn (read-string edn))
         obj (or data edn json)]
 
-    #?(:clj (mongo/insert! (or (first (deref db)) (first (deref DB)))
+    #?(:clj (mongo/with-mongo (or (first (deref db)) (first (deref DB)))
+                    (mongo/insert!
                        (keyword (or coll (second (deref db)) (second (deref DB))))
-                         obj)
+                         obj))
 
        :cljs (. (or db (deref DB)) (insert (clj->js obj))))))
 
@@ -75,7 +77,9 @@
 
   #?(:clj (mongo/with-mongo (or (first (deref db)) (first (deref DB)))
                                 (mongo/update!
-                                  (keyword (or coll (second (deref db)) (second (deref DB))))))
+                                  (keyword (or coll (second (deref db)) (second (deref DB))))
+                                    query
+                                      (merge (search {:db db :coll coll :query query}) data)))
 
      :cljs (. ((or db (deref DB)) (clj->js (or query {}))) (update data))))
 
@@ -88,7 +92,7 @@
 
   [{db :db coll :coll query :query}]
 
-  #?(:clj (mongo/with-mongo (or (first (deref db) (first (deref DB))))
+  #?(:clj (mongo/with-mongo (or (first (deref db)) (first (deref DB)))
                             (mongo/destroy!
                               (keyword (or coll (second (deref db)) (second (deref DB))))
                                 query))

@@ -1,4 +1,4 @@
-(defproject org.clojars.yorggen/friar-tuck "0.1.0-SNAPSHOT"
+(defproject org.clojars.yorggen/friar-tuck "0.1.1-SNAPSHOT"
   :description "A (WIP) lib to provide simple helper api for MongoDB and TaffyDB (for now). Friar Tuck can help you make some sweet mead!"
   :url "https://github.com/yvendruscolo/friar-tuck"
   :license {:name "Eclipse Public License"
