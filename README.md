@@ -1,6 +1,22 @@
+## Friar Tuck: WIP
+
+friar-tuck is a Clojure(Script) library to help you solve the same problems I had myself.
+
+[![Clojars Project](https://clojars.org/org.clojars.yorggen/friar-tuck/latest-version.svg)](https://clojars.org/org.clojars.yorggen/friar-tuck)
+
+#### tuck.cellar
+
+* [MongoDB](https://www.mongodb.com/) interface in the JVM via [congomongo](https://github.com/aboekhoff/congomongo) (java driver)
+* [TaffyDB](http://taffydb.com/) interface on the browser
+
+
+
+## About
+
+
 <p><a href="https://commons.wikimedia.org/wiki/File:The_friar_took_Robin_on_his_back_by_Louis_Rhead_1912.png#/media/File:The_friar_took_Robin_on_his_back_by_Louis_Rhead_1912.png"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/The_friar_took_Robin_on_his_back_by_Louis_Rhead_1912.png" alt="The friar took Robin on his back by Louis Rhead 1912.png"></a><br>By <a href="https://en.wikipedia.org/wiki/en:Louis_Rhead" class="extiw" title="w:en:Louis Rhead">Louis Rhead</a> - Rhead, Louis. "Bold Robin Hood and His Outlaw Band: Their Famous Exploits in Sherwood Forest". New York: Blue Ribbon Books, 1912., Public Domain, <a href="https://commons.wikimedia.org/w/index.php?curid=1139258">Link</a></p>
 
-# Friar Tuck: WIP
+
 
 Just as Sam did all the heavy lifting in the background for Frodo without taking enough credit, Friar Tuck helped Robin Hood.
 
@@ -10,7 +26,6 @@ Right now, tuck can help you manage your goodies cellar.
 
 Enough about flavor...
 
-friar-tuck is a Clojure(Script) library to help you solve the same problems I had myself.
 
 As of now, only cellar.cljc works. It gives you a unified api to use [TaffyDB](http://taffydb.com/) while on the browser/cljs/js (you still need to add taffydb.min.js yourself), or [MongoDB](https://www.mongodb.com/) while on the server/clj/jvm (via [congomongo](https://github.com/aboekhoff/congomongo)).
 
@@ -38,7 +53,6 @@ Why [congomongo](https://github.com/aboekhoff/congomongo)?
 I believe docs are straightforward (docstrings, you can see them in the repl calling (doc function)), but examples are never too much:
 
 ```Clojure
-
 (ns your-namespace
   (:require [tuck.cellar :as tc]))
 
